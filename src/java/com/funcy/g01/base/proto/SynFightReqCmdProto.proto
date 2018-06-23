@@ -1,0 +1,41 @@
+package proto;
+
+import "proto/SynFightBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.service";
+option java_outer_classname = "SynFightReqProtoBuffer";
+
+message PlayerEnterFightReqProto {
+	optional string params1 = 1;
+	optional string params2 = 2;
+	optional PlayerEnterProto params3 = 3;
+	optional int32 params4 = 4;
+	optional string params5 = 5;
+}
+
+message CommonEventReqProto {
+	optional CommonEventProto params1 = 1;
+}
+
+message SynEmptyEventReqProto {
+	optional EmptyEventProto params1 = 1;
+}
+
+message ConjurePhysicsObjReqProto {
+	optional ConjurePhysicsObjEventProto params1 = 1;
+}
+
+message ChatEventReqProto {
+	optional ChatEventProto params1 = 1;
+}
+
+message SpeakEventReqProto {
+	optional SpeakEventProto params1 = 1;
+}
+
+message UseSkillEventReqProto {
+	optional UseSkillEventProto params1 = 1;
+}
+message FightSkillObjEventReqProto {
+	optional FightSkillObjEventProto params1 = 1;
+}

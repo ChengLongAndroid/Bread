@@ -1,0 +1,11 @@
+package proto;
+
+option java_package = "com.funcy.g01.base.proto.global";
+
+option java_outer_classname = "RespErrorProtoBuffer";
+
+message RespErrorResultProto {
+	optional int32 errorCode = 1;
+	optional string msg = 2;
+	optional int32 type = 3; //10.弹窗，按确定回到游戏 11.弹窗，关闭按钮，按关闭退出游戏
+}

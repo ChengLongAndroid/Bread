@@ -1,0 +1,313 @@
+package proto;
+
+option java_package = "com.funcy.g01.base.proto.service";
+
+message IntReqProto {
+	optional int32 index = 1;
+}
+
+message LongReqProto {
+	optional int64 index = 1;
+}
+
+message EmptyReqProto {
+}
+
+message StrStrIntIntProto {
+	optional string params1 = 1;
+	optional string params2 = 2;
+	optional int32 params3 = 3;
+	optional int32 params4 = 4;
+}
+
+message StrStrIntProto {
+	optional string params1 = 1;
+	optional string params2 = 2;
+	optional int32 params3 = 3;
+}
+
+message StrIntProto{
+	optional string params1 = 1;
+	optional int32 params2 = 2;
+}
+
+message StrLongProto{
+	optional string params1 = 1;
+	optional int64 params2 = 2;
+}
+
+message LongStrProto{
+	optional int64 params1 = 1;
+	optional string params2 = 2;
+}
+
+message StrLongLongProto{
+	optional string params1 = 1;
+	optional int64 params2 = 2;
+	optional int64 params3 = 3;
+}
+
+message strIntIntProto{
+	optional string params1 = 1;
+	optional int32 params2 = 2;
+	optional int32 params3 = 3; 
+}
+
+message StrStrStrIntProto{
+	optional string params1 = 1;
+	optional string params2 = 2;
+	optional string params3 = 3;
+	optional int32 params4 = 4;
+}
+
+message StrStrStrIntIntProto{
+	optional string params1 = 1;
+	optional string params2 = 2;
+	optional string params3 = 3;
+	optional int32 params4 = 4;
+	optional int32 params5 = 5;
+}
+
+message IntLongBoolStrProto {
+	optional int32 params1 = 1;
+	optional int64 params2 = 2;
+	optional bool params3 = 3;
+	optional string params4 = 4;
+}
+
+message StrProto {
+	optional string params1 = 1;
+}
+
+message StrListProto {
+	repeated string params1 = 1;
+}
+
+message StrStrProto {
+	optional string params1 = 1;
+	optional string params2 = 2;
+}
+
+message IntIntProto {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+}
+
+message IntLongProto {
+	optional int32 params1 = 1;
+	optional int64 params2 = 2;
+}
+
+message IntLongStrProto {
+	optional int32 params1 = 1;
+	optional int64 params2 = 2;
+	optional string params3 = 3;
+}
+
+message IntLongStrStrProto {
+	optional int32 params1 = 1;
+	optional int64 params2 = 2;
+	optional string params3 = 3;
+	optional string params4 = 4;
+}
+
+message IntIntIntProto {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	optional int32 params3 = 3;
+}
+
+message IntIntLongProto {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	optional int64 params3 = 3;
+}
+
+message IntIntIntIntProto {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	optional int32 params3 = 3;
+	optional int32 params4 = 4;
+}
+
+message IntIntboolIntProto {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	optional bool params3 = 3;
+	optional int32 params4 = 4;
+}
+
+message ListList {
+	repeated int32 params1 = 1;
+	repeated int32 params2 = 2;
+}
+
+message IntListList {
+	optional int32 params1 = 1;
+	repeated int32 params2 = 2;
+	repeated int32 params3 = 3;
+}
+
+message IntIntListList {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	repeated int32 params3 = 3;
+	repeated int32 params4 = 4;
+}
+
+message IntStrListList {
+	optional int32 params1 = 1;
+	optional string params2 = 2;
+	repeated int32 params3 = 3;
+	repeated int32 params4 = 4;
+}
+
+message LongListProto {
+	repeated int64 params1 = 1;
+}
+
+message LongListList {
+	optional int64 params1 = 1;
+	repeated int32 params3 = 2;
+	repeated int32 params4 = 3;
+}
+
+message LongLongListList {
+	optional int64 params1 = 1;
+	optional int64 params2 = 2;
+	repeated int32 params3 = 3;
+	repeated int32 params4 = 4;
+}
+
+message LongIntIntListList {
+	optional int64 params1 = 1;
+	optional int32 params2 = 2;
+	optional int32 params3 = 3;
+	repeated int32 params4 = 4;
+	repeated int32 params5 = 5;
+}
+
+message LongIntIntBool {
+	optional int64 params1 = 1;
+	optional int32 params2 = 2;
+	optional int32 params3 = 3;
+	optional bool params4 = 4;
+}
+message IntIntIntListList {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	optional int32 params3 = 3;
+	repeated int32 params4 = 4;
+	repeated int32 params5 = 5;
+}
+
+message BoolReqProto {
+	optional bool params1 = 1;
+}
+
+message IntIntboolIntIntProto {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	optional bool params3 = 3;
+	optional int32 params4 = 4;
+	optional int32 params5 = 5;
+}
+
+message IntIntBoolBoolProto {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	optional bool params3 = 3;
+	optional bool params4 = 4;
+}
+
+message StrIntLongLongProto {
+	optional string params1 = 1;
+	optional int32 params2 = 2;
+	optional int64 params3 = 3;
+	optional int64 params4 = 4;
+}
+
+
+message LongLongProto {
+	optional int64 params1 = 1;
+	optional int64 params2 = 2;
+}
+
+message StrIntIntIntProto{
+	optional string params1 = 1;
+	optional int32 params2 = 2;
+	optional int32 params3 = 3;
+	optional int32 params4 = 4;
+}
+
+message LongIntLongProto{
+	optional int64 params1 = 1;
+	optional int32 params2 = 2;
+	optional int64 params3 = 3;
+}
+
+message StringBytesProto{
+	optional string params1 = 1;
+	optional bytes params2 = 2;
+}
+
+message LongLongIntProto{
+	optional int64 params1 = 1;
+	optional int64 params2 = 2;
+	optional int32 params3 = 3;
+}
+
+message StrIntIntIntLongProto{
+	optional string params1 = 1;
+	optional int32 params2 = 2;
+	optional int32 params3 = 3;
+	optional int32 params4 = 4;
+	optional int64 params5 = 5;
+}
+
+message ListListListProto{
+	repeated int32 params1 = 1;
+	repeated int32 params2 = 2;
+	repeated int32 params3 = 3;
+}
+
+message IntIntStringIntIntBoolProto {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	optional string params3 = 3;
+	optional int32 params4 = 4;
+	optional int32 params5 = 5;
+	optional bool params6 = 6;
+}
+
+message IntIntStringIntIntBoolLongProto {
+	optional int32 params1 = 1;
+	optional int32 params2 = 2;
+	optional string params3 = 3;
+	optional int32 params4 = 4;
+	optional int32 params5 = 5;
+	optional bool params6 = 6;
+	optional int64 params7 = 7;
+}
+
+message UploadImgReqProto {
+	optional int64 roleId = 1;
+	optional string pngName = 2;
+	optional string token = 3;
+	optional bytes imageData = 4;
+}
+
+message LongIntReqProto {
+	optional int64 params1 =1;
+	optional int32 params2 =2;
+}
+
+message StrStrStrIntIntStrStrReqProto {
+	optional string params1 = 1;
+	optional string params2 = 2;
+	optional string params3 = 3;
+	optional int32 params4 = 4;
+	optional int32 params5 = 5;
+	optional string params6 = 6;
+	optional string params7 = 7;
+}

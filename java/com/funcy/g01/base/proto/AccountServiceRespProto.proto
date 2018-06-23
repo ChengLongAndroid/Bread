@@ -1,0 +1,79 @@
+package proto;
+
+import "proto/GlobalBoProto.proto";
+import "proto/SynFightBoProto.proto";
+import "proto/FriendCmdProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.service";
+option java_outer_classname = "AccountServiceRespProtoBuffer";
+
+message HallLoginResp {
+	optional RoleInfoVoProto roleVo = 1;
+	optional FightRoomInfoProto roomInfo = 2;
+	optional string key = 3;
+	repeated TotemVoProto totems = 4; 
+	repeated SkillVoProto skills = 5;
+	repeated ItemVoProto items = 6;
+	repeated DressVoProto dresses = 7;
+	optional RoleWeekFightInfoProto roleWeekFightInfo = 8;
+	optional int32 loginState = 9;
+	optional int32 newComerStep = 10;
+	optional bool isReenter = 11;
+	optional RoleAchievementInfoProto roleAchievementInfo = 12;
+	repeated FrameVoProto photoFrames = 13;
+	optional RoleNpcsInfoProto roleNpcsInfo = 14;
+	repeated EmailProto emails = 15;
+	optional UnitInfoProto selfUnitInfo = 16;
+	optional ActiveInfoProto activeInfo = 17;
+	repeated int64 friendRoleIds = 18;
+	repeated FriendReqVoProto friendReqs = 19;
+	repeated FriendMessageVoProto offlineFriendMsgs = 20;
+	optional int64 serverTime = 21;
+}
+
+message ChangeKeyResp {
+	optional string key = 1;
+	optional string token = 2;
+}
+
+message GivePresentResp {
+	optional int32 result = 1;
+	optional NpcProto npc = 2;
+	optional int32 addExp = 3;
+}
+
+message NpcTryGetNextTaskResp {
+	repeated NpcTaskProto newTasks = 1;
+}
+
+message EmptyResp {
+}
+
+message PingRespProto {
+	optional int32 avePingTime = 1;
+}
+
+message ForceQuitRespProto {
+	optional int32 reasonType = 1;
+}
+
+message CompleteNeedItemTaskProto {
+	optional int32 result = 1;
+	repeated ItemVoProto items = 2;
+}
+
+message NotifyItemNotEnoughMsgProto {
+	optional string msg = 1;
+	repeated ItemVoProto items = 2;
+	optional int32 type = 3;
+}
+
+message NotifyRoleInfoChangeMsgProto {
+	optional int32 roleLevel = 1;
+	optional int32 roleExp = 2;
+	optional int64 roleCheese = 3;
+	optional int32 weekCheese = 4;
+	optional int32 weekExp = 5;
+	optional int32 weekAddExp = 6;
+}
+

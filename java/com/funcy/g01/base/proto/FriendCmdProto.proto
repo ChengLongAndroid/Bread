@@ -1,0 +1,83 @@
+package proto;
+
+import "proto/GlobalBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.service";
+option java_outer_classname = "FriendProtoBuffer";
+
+message FriendReqVoProto{
+	optional int64 fromRoleId = 1;
+	optional int32 state = 2;	// 状态: 0等待审批;1同意;2拒绝
+	optional FriendVoProto friendVo = 3;	// 申请人信息
+	optional bool hadRead = 4;
+}
+
+message RoleFriendReqInfoProto{
+	optional int64 roleId = 1;
+	repeated FriendReqVoProto friendReqs = 2;
+}
+
+message FriendMessageVoProto{
+	optional int64 fromRoleId = 1;
+	optional int64 toRoleId = 2;
+	optional string msg = 3;
+	optional int64 createTime = 4;	// 发信息时间
+	optional int32 isReaded = 5;	// 是否已读；1已读0未读
+}
+
+message FriendVoProto{
+	optional int64 roleId = 1;
+	optional string platformId = 2;
+	optional string roleName = 3;
+	optional int32 roleLevel = 4;
+	optional int32 vipLevel = 5;
+	optional string photo = 6;
+	optional int32 sex = 7;
+	optional int32 photoFrame = 8;
+	optional int32 state = 9;
+	optional int64 lastPlayOpenTime = 10;
+	optional int64 roomId = 11;
+	optional int32 licenseLevel = 12;
+	optional int64 lastOnlineTime = 13;
+}
+
+message RoleFriendInfoProto{
+	repeated int64 friends = 1;
+}
+
+message RoleFriendInfoProto4Front {
+	repeated FriendVoProto friends = 1;
+}
+
+message RoleFriendMessageInfoProto{
+	repeated FriendMessageVoProto msgs = 1;
+}
+
+message AcceptFriendReqResult{
+	optional int32 result = 1;
+}
+
+message RoleRecentPartnerInfoProto {
+	optional int64 roleId =1;
+	repeated PartnerVoProto partners = 2;
+}
+
+message PartnerVoProto {
+	optional int64 roleId =1;
+	optional int64 recentPlayTime =2;
+}
+
+message RecommendFriendVoProto {
+	optional int64 roleId =1;
+	optional string roleName =2;
+	optional int32 roleLevel =3;
+	optional int32 shammanLevel =4;
+	optional string photo = 5;
+	optional int32 sex =6;
+	optional int32 photoFrame =7;
+	optional int32 type =8;
+}
+
+message GetRecommendFriendsRespProto {
+	repeated RecommendFriendVoProto recommendFriend =1;
+}

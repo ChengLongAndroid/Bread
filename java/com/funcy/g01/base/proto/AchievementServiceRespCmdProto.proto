@@ -1,0 +1,15 @@
+package proto;
+
+import "proto/GlobalBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.bo.service";
+option java_outer_classname = "AchievementServiceRespProtoBuffer";
+
+message ChangeAchievement {
+	repeated AchievementProto achievements = 1;
+}
+
+message ClaimAchievement{
+	optional AchievementProto achievement = 1;
+	optional bool isSuccess = 2;
+}

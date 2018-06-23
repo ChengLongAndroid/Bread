@@ -1,0 +1,6 @@
+option java_package = "com.funcy.g01.base.proto";  
+option java_outer_classname = "Persons";
+message PersonInfo  {  
+  required int32 id = 1;
+  required string name = 2;
+} 

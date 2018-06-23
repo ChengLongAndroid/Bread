@@ -1,0 +1,80 @@
+package proto;
+
+import "proto/SynFightBoProto.proto";
+import "proto/GlobalBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.service";
+option java_outer_classname = "SynFightRespProtoBuffer";
+
+message GetServerRoomsInfoRespProto {
+	repeated DispatcherRoomProto rooms = 1;
+}
+
+message PrepareEndProto {
+	repeated PlayerInfoProto playerInfos = 1; 
+}
+
+message SelfPlayerEnterProto {
+	optional FightRoomInfoProto roomInfo = 1;
+	optional int32 loginState = 2;
+	optional bool isReenter = 3;
+}
+
+message FightEndPlayerResultProto {
+	optional int64 roleId = 1;
+	optional int32 ranking = 2;
+	optional int32 winFrame = 3;
+	optional int32 cheeseNum = 4;
+	optional int32 rankingNo1Num = 5;
+	optional int32 shammanExp = 6;
+	optional ChestSlotProto chestSlot = 7;
+	optional bool isDropChest = 8;
+	optional int32 extAddCheeseNum = 9;
+	optional int32 addExp = 10;
+	optional int32 extAddExp = 11;
+	optional int32 addCheeseNum = 12;
+	optional int32 rankingAddExp = 13;
+	optional int32 weekCheeseNum = 14;
+	optional int32 maxWeekCheeseNum = 15;
+	optional int32 weekExp = 16;
+	optional int32 maxWeekExp = 17;
+	optional int32 weekRankingExp = 18;
+	optional int32 maxWeekRankingExp = 19;
+	optional int32 normalExpPotionNum = 20;
+	optional int32 advanceExpPotionNum = 21;
+	optional int32 normalCheesePotionNum = 22;
+	optional int32 advanceCheesePotionNum = 23;
+	optional int32 beforeLevel = 24;
+	optional int32 afterLevel = 25;
+	optional int32 beforeExp = 26;
+	optional int32 afterExp = 27;
+}
+
+message FightEndInfoProto {
+	optional int32 totalFrames = 1;
+	repeated FightEndPlayerResultProto playerResults = 2;
+	optional int32 eventType = 3;
+	optional int32 frameIndex = 4;
+}
+
+message FightRestartInfoProto {
+	optional FightRoomInfoProto roomInfo = 1;
+	optional FightMapInfoProto mapInfo = 2;
+}
+
+message PeriodUpdateObjInfoProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	repeated PhysicsObjProto objs = 3;
+}
+
+message RefreshRoomInfoProto {
+	optional int64 roomId = 1;
+	optional int32 roomFightIndex = 2;
+	repeated PlayerInfoWithUnitProto players = 3;
+	repeated PhysicsObjProto objs = 4;
+	optional int32 frameIndex = 5;
+	optional int32 fightState = 6;
+	optional int32 state = 7;
+}
+

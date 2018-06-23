@@ -1,0 +1,12 @@
+package proto;
+
+import "proto/GlobalBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.service";
+option java_outer_classname = "ActiveServiceRespProtoBuffer";
+
+message OpenChestOnSlotProto {
+	repeated ItemVoProto items = 1;
+	optional ChestSlotProto chestSlot = 2;
+	optional bool isOpen = 3;
+}

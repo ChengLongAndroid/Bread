@@ -1,0 +1,10 @@
+package proto;
+
+import "proto/SynFightBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.bo.service";
+option java_outer_classname = "MapServiceReqProtoBuffer";
+
+message SaveMapReqProto {
+	optional ServerMapInfoProto params1 = 1;
+}

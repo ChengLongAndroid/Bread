@@ -1,0 +1,14 @@
+package proto;
+
+import "proto/GlobalBoProto.proto";
+import "proto/SynFightBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.service";
+option java_outer_classname = "HallServiceRespProtoBuffer";
+
+message HallGetFightRoomInfoRespProto {
+	optional ServerInfoVo4FrontProto serverInfo = 1;
+	optional int64 roomId = 2;
+}
+
+

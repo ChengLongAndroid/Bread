@@ -1,0 +1,307 @@
+package proto;
+
+option java_package = "com.funcy.g01.base.proto.bo";
+
+option java_outer_classname = "GlobalBoProtoBuffer";
+
+message RoleInfoVoProto {
+	optional int64 id = 1;
+	optional string platformId = 2;
+	optional string roleName = 3;
+	optional int32 roleLevel = 4;
+	optional int32 vipLevel = 5;
+	optional string photo = 6;
+	optional int32 lastSyncAt = 7;
+	optional int64 loginTime = 8;
+	optional int64 createTime = 9;
+	optional string regIp = 10;
+	optional string loginIp = 11;
+	optional string token = 12;
+	optional int64 cheese = 13;
+	optional int32 gem = 14;
+	repeated int32 dresses = 15;
+	optional int32 currentExp = 16;
+	optional int32 shammanLevel = 17[default = 1];
+	optional int32 shammanExp = 18;
+	optional int32 newComerStep = 19;
+	optional int32 unitXmlId = 20[default = 10002];
+	optional bool isEnableSpeech = 21[default=true];
+	optional int32 sex = 22;
+	optional int32 charm = 23;
+	optional string declaration = 24;
+	optional string city = 25;
+	optional int32 championNum = 26;
+	optional int32 rescueNum = 27;
+	optional int32 achievePoint = 28;
+	optional int32 continueLogin = 29;
+	optional int32 cumulativeLogin = 30;
+	optional int32 photoFrame = 31;
+	optional int32 fansNum = 32;
+	optional int32 followsNum = 33;
+	optional bool haveBuyOneYuanGift = 34;
+	optional int64 monthCardExpirationTime = 35;
+	optional int64 yearCardExpirationTime = 36;
+	optional int32 checkpointId = 37;
+	repeated RoleUseItemInfoProto useItemInfo = 39;
+	optional int32 specMouseTypeId = 40[default=1];
+	optional int32 maxSpecMouseTypeId = 41[default=1];
+	optional int32 recordShammanLevel = 42[default=1];
+	optional int32 newComerDayRebornLeftNum = 43;
+	optional int32 mouseFightNum = 44;
+	optional int32 mouseWinNum = 45;
+	optional int32 samanNum = 46;
+	optional int32 samanWinNum = 47;
+}
+
+message RoleUseItemInfoProto {
+	optional int32 itemXmlId = 1;
+	optional int32 leftCount = 2;
+}
+
+message RoleSocialInfoProto {
+	repeated int64 follows = 1;
+	repeated int64 fans = 2;
+	optional int32 likes = 3;
+}
+
+message RoleSocialBaseInfoProto {
+	optional int64 follows = 1;
+	optional int64 fans = 2;
+	optional int32 likes = 3;
+	optional int32 soundTime = 4;
+	optional bool isFollow = 5;
+}
+
+message RoleSoundInfoProto {
+	repeated bytes sounds = 1;
+	optional int32 soundTime = 2;
+}
+
+message RoleNetInfoProto {
+	optional int32 hallServerId = 1;
+	optional int32 fightServerId = 2;
+	optional string token = 3;
+	optional int64 tokenTimestamp = 4;
+	optional int64 hallRoomId = 5;
+	optional int64 fightRoomId = 6;
+}
+
+message RoleStateInfoProto {
+	optional int32 state = 1;
+	optional int64 lastGameOpenTime = 2;
+	optional int32 privateRoomId = 3;
+}
+
+message CurrencyProto{
+	optional int32 currencyType = 1;
+	optional int32 price = 2;
+}
+
+message ServerInfoVo4FrontProto {
+	optional string ip = 1;
+	optional string name = 2;
+	optional int32 port = 3;
+	optional int32 serverId = 4;
+}
+
+message TotemVoProto{
+	optional int32 id = 1;
+	optional int32 xmlId = 2;
+	optional int32 skillId = 3;
+}
+
+message SkillVoProto{
+	optional int32 xmlId = 1;
+	optional int32 star = 2;
+}
+
+message ItemVoProto{
+	optional int32 type = 1;
+	optional int32 xmlId = 2;
+	optional int32 num = 3;
+}
+
+message DressVoProto{
+	optional int32 xmlId = 1;
+}
+
+message AchievementProto{
+	optional int32 xmlId = 1;
+	optional int32 completeness = 2;
+	optional int32 state = 3;
+}
+
+message RoleAchievementInfoProto{
+	optional int64 roleId = 1;
+	repeated AchievementProto achievements = 2;
+	optional int32 achievePoint = 3;
+	optional int32 growupStar = 4;
+	optional int32 promotionStar = 5;
+	optional int32 growupGrade = 6;
+	optional int32 promotionGrade = 7;
+}
+
+message RoleTotemInfoProto{
+	optional int64 roleId = 1;
+	repeated TotemVoProto totems = 2;
+}
+
+message RoleSkillInfoProto{
+	optional int64 roleId = 1;
+	repeated SkillVoProto skills = 2;
+}
+
+message RoleItemInfoProto{
+	optional int64 roleId = 1;
+	repeated ItemVoProto items = 2;
+}
+
+message RoleDressInfoProto{
+	optional int64 roleId = 1;
+	repeated DressVoProto dresses = 2;
+}
+
+message RoleWeekFightInfoProto{
+	optional int64 roleId = 1;
+	optional int32 exp = 2;
+	optional int32 addExp = 3;
+	optional int32 cheese = 4;
+}
+
+message FrameVoProto{
+	optional int32 xmlId = 1;
+}
+
+message RoleFrameInfoProto{
+	optional int64 roleId = 1;
+	repeated FrameVoProto frames = 2;
+}
+
+message DisplayResultProto{
+	repeated ItemVoProto items = 1;
+}
+
+message RoleRankingInfoProto {
+	optional int64 roleId = 1;
+	optional int64 ranking = 2;
+	optional string image = 3;
+	optional bool sex = 4;
+	optional string name = 5;
+	optional string location = 6;
+	optional int32 charm = 7;
+	optional int32 achievement = 8;
+	optional int32 licenseLevel = 9;
+	optional int32 fansNum = 10;
+	optional int32 newFansNum = 11;
+	optional int32 championNum = 12;
+	optional int32 newChampionNum = 13;
+	optional int32 rescueNum = 14;
+	optional int32 newRescueNum = 15;
+	optional int32 photoFrame = 16;
+	optional int32 roleLevel = 17;
+}
+
+message RoleHallInfoProto {
+	optional int32 posX = 1;
+	optional int32 posY = 2;
+}
+
+message EmailProto {
+	optional int32 mailId = 1;
+	optional string accepterName = 2;
+	optional string title = 3;
+	optional string content = 4;
+	optional string senderName = 5;
+	optional int64 senderId = 6;
+	optional string rewards = 7;
+	optional int64 createTime = 8;
+	optional int32 senderAreaId = 11;
+	optional int64 accepterId = 14;
+	optional int32 type = 15;
+	optional int32 state = 16;	// 0新增；1已读未领取；2已读已领取
+}
+
+message SysEmailStatusProto {
+	optional int32 mailId = 1;
+	optional int32 state = 2;	// 0新增；1已读未领取；2已读已领取
+}
+
+message RoleEmailInfoProto{
+	repeated EmailProto emails = 1;
+	repeated SysEmailStatusProto sysEmails = 2;
+}
+
+message SendEmailMessageProto {
+	optional int64 sendTime = 1;
+	optional string ip = 2;
+	optional string roleName = 3;
+	optional string emailMsg = 4;
+}
+message SendEmailMessageInfoProto {
+	repeated SendEmailMessageProto records = 1;
+}
+
+message NpcProto {
+	optional int32 xmlId = 1;
+	optional int32 likesLevel = 2;
+	optional int32 likesExp = 3;
+}
+
+message NpcTaskProto {
+	optional int32 xmlId = 1;
+	optional int32 npcXmlId = 2;
+	optional int32 completeNum = 3;
+	optional int32 state = 4;
+}
+
+message RoleNpcsInfoProto {
+	repeated NpcProto npcs = 1;
+	repeated NpcTaskProto npcTasks = 2;
+	optional int64 lastGetTaskTime = 3;
+}
+
+message ChestSlotProto {
+	optional int32 type = 1;
+	optional int64 canOpenTime = 2;
+	optional int32 index = 3;
+}
+
+message RoleChestInfoProto {
+	optional int32 winNum = 1;
+	repeated ChestSlotProto chestSlots = 2;
+	optional int32 accumulateChestNum = 3;
+}
+
+message RoleSigninInfoProto {
+	optional int32 currentSigninDay = 1;
+	optional bool isTodaySignin = 2;
+	optional int32 signinRewardId = 3[default=1];
+}
+
+message ActiveInfoProto{
+	optional RoleChestInfoProto roleChestInfo = 1;
+	optional RoleSigninInfoProto roleSigninInfo = 2;
+	optional RoleMysteriousShopInfoProto roleMysteriousShopInfo = 3;
+}
+
+message ExchangeRecordProto {
+	optional int32 activeShopId = 1;
+	optional int32 shopPeriodId = 2;
+	optional int32 exchangeNum = 3;
+}
+
+message RoleMysteriousShopInfoProto {
+	repeated ExchangeRecordProto records = 1;
+}
+
+message GlobalChatMsgProto {
+	optional int64 roleId = 1;
+	optional string roleName = 2;
+	optional string photo = 3;
+	optional int32 roleLevel = 4;
+	optional int32 sex = 5;
+	optional string city = 6;
+	optional int32 photoFrame = 7;
+	optional string msg = 8;
+	optional int32 shammanLevel =9;
+}

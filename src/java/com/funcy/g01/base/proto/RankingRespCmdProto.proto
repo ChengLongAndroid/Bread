@@ -1,0 +1,16 @@
+package proto;
+
+import "proto/SynFightBoProto.proto";
+import "proto/GlobalBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.ranking";
+option java_outer_classname = "RankingRespCmdProtoBuffer";
+
+message BytesRespProto {
+	repeated bytes byteArray = 1;
+}
+
+message GetRankingListRespProto {
+	repeated RoleRankingInfoProto rankingList = 1;
+	optional RoleRankingInfoProto self = 2;
+}

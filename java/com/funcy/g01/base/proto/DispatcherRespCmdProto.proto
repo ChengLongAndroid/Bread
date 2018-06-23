@@ -1,0 +1,33 @@
+package proto;
+
+import "proto/SynFightBoProto.proto";
+import "proto/GlobalBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.dispatcher";
+option java_outer_classname = "DispatcherRespCmdProtoBuffer";
+
+message LoginGetHallRespProto {
+	optional int64 roomId = 1;
+	optional bool isNew = 2;
+	optional int32 serverId = 3;
+}
+
+message StartFightGetFightRoomRespProto {
+	optional int64 roomId = 1;
+	optional int32 serverId = 2;
+}
+
+message CreateNewRoomRespProto {
+	optional bool isSuccess = 1;
+}
+
+message GetSelectChannelInfoRespProto {
+	optional int32 pageIndex =1;
+	optional int32 pageCount =2;
+	repeated SelectChannelInfoProto channelInfos =3;
+}
+
+message changeChannelRespProto {
+	optional int32 status =1;
+	optional ServerInfoVo4FrontProto serverInfo =2;
+}

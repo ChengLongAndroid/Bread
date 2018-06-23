@@ -1,0 +1,293 @@
+package proto;
+
+import "proto/GlobalBoProto.proto";
+
+option java_package = "com.funcy.g01.base.proto.bo";
+option java_outer_classname = "SynFightBoProtoBuffer";
+
+message RoleMapInfoProto {
+	optional int64 roleId = 1;
+	repeated int64 mapIds = 2;
+	optional int32 mapIndex = 3;
+}
+
+message PhysicsNailProto {
+	optional int32 xmlId = 1;
+	optional string posType = 2;
+	optional int32 otherObjPosX = 3;
+	optional int32 otherObjPosY = 4;
+	optional int64 connectUnitRoleId = 6;
+	optional PhysicsObjProto otherObjProto = 7;
+	optional int32 posX = 8;
+	optional int32 posY = 9;
+}
+
+message PhysicsObjSkillChangeInfoProto {
+	optional int32 skillChangeDensityRate = 1;
+	optional int32 skillChangeFrictionRate = 2;
+	optional int32 skillChangeBalloonVRate = 3;
+	optional int32 skillExpandRate = 4;
+	optional bool skillChangeFixRotation = 5;
+}
+
+message PhysicsObjProto {
+	optional int32 xmlId = 1;
+	optional int32 posX = 2;
+	optional int32 posY = 3;
+	optional int32 rotation = 4;
+	optional int32 scaleX = 5;
+	optional int32 scaleY = 6;
+	repeated PhysicsNailProto nails = 7;
+	optional int32 id = 8;
+	optional int32 vX = 9;
+	optional int32 vY = 10;
+	optional int32 angularV = 11;
+	optional int64 roleId = 12;
+	optional bool miceVirtual = 13;
+	optional bool objVirtual = 14;
+	optional bool objTure = 15;
+	optional int32 rotationForcePercent = 16;
+	optional int32 moveForcePercent = 17;
+	optional int32 restitutionPercent = 18;
+	optional int32 frictionPercent = 19;
+	optional int32 densityPercent = 20;
+	optional int32 motionSpeedPercent = 21;
+	optional int32 launchFrequencyPercent = 22;
+	optional int32 emitterXmlId = 23;
+	optional bool isFixAngle = 24;
+	optional int32 layerNum = 25;
+	optional bool visible = 26 [default = true];
+	optional int32 battleResultId = 27;
+	optional int64 samanRoleId = 28;
+	optional PhysicsObjSkillChangeInfoProto skillChangeInfo = 29;
+	optional bool isConjured = 30;
+	optional int32 filterGroupId = 31;
+}
+
+message ConjurePhysicsObjEventProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	optional PhysicsObjProto physicsObj = 4;
+	optional int32 actConjureFrameIndex = 5;
+	optional int32 prepareConjureTime = 6;
+}
+
+message SceneLimitInfoProto{
+	optional int32 battenNum = 1;
+	optional bool canUseTransforDoor = 2;
+	optional int32 fightSeconds = 3 [default = 180];
+}
+
+message SceneSettingInfoProto{
+	optional int32 sceneHeightPercent = 1;
+	optional int32 sceneWidthPercent = 2;
+	optional int32 windDirectionPercent = 3;
+	optional int32 gravityPercent = 4;
+	optional int32 gameType = 5;
+	optional SceneLimitInfoProto sceneLimitInfo = 6;
+	optional string name = 7 [default = " "];
+	repeated int64 combinedMapIds = 8;
+	optional int32 star = 9;
+}
+
+message FakeIndependentNailProto {
+	optional int32 id = 1;
+	optional int32 posX = 2;
+	optional int32 posY = 3;
+	optional int32 layerNum = 4;
+	optional int32 xmlId = 5;
+}
+
+message FightMapInfoProto {
+	optional int64 mapId = 1;
+	repeated PhysicsObjProto physicsObjs = 2;
+	optional SceneSettingInfoProto sceneSettingInfo = 3;
+	repeated FakeIndependentNailProto independentNails = 4;
+}
+
+message ServerMapInfoProto {
+	optional FightMapInfoProto mapInfo = 1;
+	optional int64 createTime = 2;
+	optional int64 createRoleId = 3;
+	optional int64 lastModifyTime = 4;
+	optional int64 mapId = 5;
+	optional string mapName = 6 [default = " "];
+}
+
+message FightRoomInfoProto {
+	optional int32 roomId = 1;
+	optional int64 roomCreateTime = 2;
+	optional int32 curFrameIndex = 3;
+	repeated PhysicsObjProto physicsObjs = 4;
+	optional int32 roomState = 5;
+	optional SceneSettingInfoProto sceneSettingInfo = 6;
+	optional int64 mapId = 7;
+	optional int32 curStateStartFrame = 8;
+	optional DisplayResultProto fightingResult = 9;
+	optional DisplayResultProto fightWinResult = 10;
+	optional int32 roomFightIndex = 11;
+	repeated PlayerInfoProto players = 12;
+	repeated FightMapInfoProto combinedMapInfos = 14;
+	optional int32 roomType = 15;
+	optional int32 maxFightSeconds  = 16;
+}
+
+message PlayerInfoProto {
+	optional int64 roleId = 1;
+	optional RoleInfoVoProto roleVo = 2;
+	optional bool unitIsSpec = 3;
+	optional int32 helpOtherMiceSuccessNum = 4;
+}
+
+message PlayerInfoWithUnitProto {
+	optional int64 roleId = 1;
+	optional RoleInfoVoProto roleVo = 2;
+	optional UnitInfoProto unit = 3;
+	optional int32 helpOtherMiceSuccessNum = 4;
+}
+
+message PlayerEnterProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional PlayerInfoProto playerInfo = 3;
+}
+
+message CommonEventProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	optional UnitInfoProto unitInfo = 4;
+	optional int32 deadReason = 5; //需要时有值
+	optional int32 rebornSkillXmlId = 6;//当是死亡时，且技能有效时游泳
+	optional int32 newComerLeftRebornNum = 7;
+}
+
+message SpringBallTakeEffect {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	optional UnitInfoProto unitInfo = 4;
+	optional int32 springBallId = 5;
+}
+
+message RefreshUnitSkillChangeInfoEventProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	optional UnitSkillChangeInfoProto skillChangeInfo = 4;
+}
+
+message EmptyEventProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+}
+
+message UnitWinEventProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	optional int64 samanRoleId = 4;
+}
+
+message ChatEventProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	optional int32 chatType = 4;
+	optional string content = 5;
+}
+
+message SpeakEventProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	optional int32 speakType = 4;
+	repeated bytes content = 5;
+}
+
+message UnitSkillProto {
+	optional int32 skillXmlId = 1;
+	optional int32 skillLevel = 2;
+	optional int32 useCount = 3;
+	optional int64 continueEndTime = 4;
+}
+
+message UseSkillEventProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	optional int32 fightSkillId = 4;
+	optional int32 influenObjId = 5;
+	optional bool isUseSkillItem = 6;
+	optional int32 xmlId = 7;
+	optional int32 posX = 8;
+	optional int32 posY = 9;
+}
+
+message UnitSkillChangeInfoProto {
+	optional int32 soulTimeLeftTime = 1;//初始化时赋值
+	optional int32 skillIncUseSkillSpeed = 2;//初始化时赋值
+	optional int32 skillIncUseSkillRange = 3;//初始化时赋值
+	optional int32 skillChangeJumpHeightRate = 4;
+	optional int32 skillChangeFrictionRate = 5;
+	optional int32 skillChangeSpeedRate = 6;
+	optional int32 skillChangeRadiusRate = 7;
+	optional int32 skillChangeSpeed2LeftTime = 8;
+	optional int32 skillChangeSpeedRate2 = 9;
+	repeated int32 skillChangeConjureTimeMapKeys = 10;
+	repeated int32 skillChangeConjureTimeMapVals = 11;
+	optional int32 skillChangeJumpHeightRate2 = 12;
+	optional int32 skillChangeSpeedRate3 = 13;
+	optional int32 skillChangeJumpHeightRate3 = 14;
+}
+
+message UnitInfoProto {
+	optional int32 posX = 1;
+	optional int32 posY = 2;
+	optional int32 velocityX = 3;
+	optional int32 velocityY = 4;
+	optional bool isSpec = 5; //初始化时赋值
+	optional int32 state = 6;
+	optional bool haveGotCheese = 7;//初始化时赋值
+	optional int32 tranforingDropItemXmlId = 8;//初始化时赋值
+	optional int64 connectOtherUnitRoleId = 9;//初始化时赋值
+	repeated UnitSkillProto skills = 10; //初始化时赋值
+	optional UnitSkillChangeInfoProto skillChangeInfo = 11; //初始化时赋值
+}
+
+message FightSkillObjEventProto {
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	optional int32 fightSkillId = 4;
+	optional int32 posX = 5;
+	optional int32 posY = 6;
+}
+
+message PlayerChangeDressProto{
+	optional int32 eventType = 1;
+	optional int32 frameIndex = 2;
+	optional int64 roleId = 3;
+	repeated int32 dresses = 4;
+	optional string roleName = 5;
+}
+
+message PeroidUpdateRoomInfoProto {
+	optional int32 frameIndex = 1;
+}
+
+message DispatcherRoomProto {
+	optional int64 roomId = 1;
+	optional int32 state = 2;
+	repeated int64 users = 3[packed = true];
+	optional int64 curStateStartTime = 4;
+}
+
+message SelectChannelInfoProto {
+	optional int64 roomId =1;
+	optional int32 friendsNum =2;
+	optional string channelName =3;
+	optional int32 serverId =4;
+}
